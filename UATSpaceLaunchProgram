@@ -1,0 +1,88 @@
+<!--                        Fernando Diaz Avila's assignment
+    Planning: 
+    How do I want this to look like?
+        Centered with bigger numbers and the Logo UAT space program with a grey background.
+    
+    What Do I need to have?
+        I need the doctype declaration to be html
+        (I can begin with an empty HTML shell the the >>! + tab button trick Mr. Hamilton taught the class)
+        I will also need the HTML tags, head tags, title tags and text, body tags, header tags and text, paragraph tags and and alert.
+        (These extra tags that dont come along with the shell I can type, and read the course materials to find functions to make the countdown work)
+    
+    What can I do to make it better next time?
+        (I can figure out to make the coundown automatic after pressing the button once. I should check out WWW3 schools to look looping)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+        <title>UAT Space Program</title> <!--This is what the rowser displays the webpage title as.-->
+
+        <!--Use the style tags to format the information to display-->
+             <style type="text/css">
+                p{
+                    
+                    font-size:100p;
+                    color: red;
+                    font-weight: bold;
+                    font-family: 'Times New Roman', Times, serif;
+                    
+                    
+                }
+            </style>
+
+        <h1 style="text-align:center; border:2px solid DodgerBlue;"
+        >UAT Space Program Launch system CountDown</h1>
+            <!--Centered the heading on the webpage-->
+            <!--Reviewed the class video in structuring the script-->
+
+            <!--Added an alert to meet criteria-->
+        <script type="text/javascript">
+            alert("Are you ready for launch?"); 
+            
+            var countDown = 10;
+            document.getElementById("DisplayCountDown").innerHTML = countDown;
+
+            
+        function RunCountDown()
+            {
+                countDown --;
+            if(countDown != 0 )
+                {document.getElementById("DisplayCountDown").innerHTML = countDown;}
+                    else
+                {document.getElementById("DisplayBlastOff").innerHTML = "Blast Off!";}
+            }
+        </script>
+                <!-- Ran code to ensure alert appears, and is functional.-->
+    </head>
+
+
+
+        <!--I had to go back to my notes from the Modual 1 lecture of colors 
+            and backgrounds to see the tag to upload the Logo. Visited w3 schools to look for multiple styles in the smae tag.-->
+    <body style="text-align:center;background-color:grey;">
+
+        <!--Adjusted the image width and hight attributes.-->
+        <img src="https://synchronic.uat.edu/courses/5371/files/732245/download?wrap=1" width="500px" height="500px"
+        >
+
+        <!--
+        ***<p> var countdown </p>***
+        Here I pressumed the code to desplay the variable countdown when on line 39 I created the 
+        variable an ID and instructed the program to get the element by its ID instead of its variable name--> 
+        
+        <p id="DisplayCountDown"></p>
+        <p id="DisplayBlastOff" ></p>
+        <button id="b" onclick = "RunCountDown()"> Launch</button>
+    </body>
+    
+<!--Reviewing code as <p id= "DisplayCountdown"> tag aren't displaying.
+    Now I understand by the program bing case sensitive. The ID tag for DisplayCountDown didnt match in the <p> tag. 
+    Issue was resolved by correcty
+    -->
+</html>
